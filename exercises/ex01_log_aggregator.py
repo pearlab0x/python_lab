@@ -14,7 +14,15 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-LOG_RE = re.compile(r'^(\S+).*"[A-Z]+ [^"]*" (\d{3})')
+LOG_RE = re.compile(
+    r"""
+    ^(\S+)          # client IP
+    .*              # skip timestamp etc.
+    "[A-Z]+\ [^"]*" # the quoted request line
+    \ (\d{3})       # status code
+""",
+    re.VERBOSE,
+)
 
 
 def aggregate(lines: list[str]) -> tuple[Counter[str], int]:

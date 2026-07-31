@@ -1,0 +1,4 @@
+host: web01
+port: 8080
+threshold: 85
+enabled: true

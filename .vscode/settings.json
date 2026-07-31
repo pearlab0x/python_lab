@@ -1,5 +1,6 @@
 {
   "python.defaultInterpreterPath": ".venv/bin/python",
+  "python.analysis.extraPaths": ["./exercises"],
   "[python]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "charliermarsh.ruff",
